@@ -1,0 +1,87 @@
+program: ./experiments/train.py
+method: grid
+name: k_out_of_n-hard-1-of-5-DDMAC
+metric:
+  goal: minimize
+  name: inference_mean
+parameters:
+
+  ENV_SETTING:
+    value: hard-1-of-5
+
+  ALGORITHM:
+    value: DDMAC
+
+  RANDOM_SEED:
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+  NUM_EPISODES:
+    value: 100_000
+
+  BATCH_SIZE:
+    value: 64
+
+  MAX_MEMORY_SIZE:
+    value: 500_000
+
+  ACTOR_CONFIG:
+    parameters:
+      hidden_layers:
+        value: [16, 16]
+      optimizer:
+        value: Adam
+      lr:
+        value: 0.0001
+      lr_scheduler:
+        parameters:       #2
+          scheduler:
+            value: LinearLR
+          kwargs:
+            parameters:           #3
+              start_factor:
+                value: 1
+              end_factor:
+                value: 0.1
+              total_iters:
+                value: 20_000
+
+  CRITIC_CONFIG:
+    parameters:
+      hidden_layers:
+        value: [64, 64]
+      optimizer:
+        value: Adam
+      lr:
+        value: 0.001
+      lr_scheduler:
+        parameters:       #2
+          scheduler:
+            value: LinearLR
+          kwargs:
+            parameters:           #3
+              start_factor:
+                value: 1
+              end_factor:
+                value: 0.1
+              total_iters:
+                value: 20_000
+
+  EXPLORATION_STRATEGY:
+    parameters:
+      name:
+        value: epsilon_greedy
+      num_episodes:
+        value: 20_000
+      max_value:
+        value: 1
+      min_value:
+        value: 0.005
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
