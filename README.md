@@ -1,6 +1,6 @@
 # Optimality of Decentralization
 
-A repository for the code accompanying the paper "[Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems]()" by Prateek Bhustali and Charalampos Andriotis.
+A repository for the code accompanying the paper "[Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems](https://pure.tudelft.nl/ws/portalfiles/portal/214136107/BNAIC2023_paper_13.pdf)" by Prateek Bhustali and Charalampos Andriotis.
 
 This repository imports the [imprl](https://github.com/omniscientoctopus/imprl) library as a submodule at a specific commit to ensure reproducibility as the imprl library is being developed further for general use.
 
