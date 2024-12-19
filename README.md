@@ -1,6 +1,6 @@
 # Optimality of Decentralization
 
-A repository for the code accompanying the paper "[Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems](https://pure.tudelft.nl/ws/portalfiles/portal/214556133/BNAIC2023_paper_13.pdf)" by Prateek Bhustali and Charalampos Andriotis.
+A repository for the code accompanying the paper "[Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems](https://link.springer.com/chapter/10.1007/978-3-031-74650-5_13)" by Prateek Bhustali and Charalampos Andriotis.
 
 This repository imports the [imprl](https://github.com/omniscientoctopus/imprl) library as a submodule at a specific commit to ensure reproducibility as the imprl library is being developed further for general use.
 
@@ -112,3 +112,26 @@ wandb agent -e "<entity>" -p "<project-name>" --count 1 <sweep-id>
 ```
 
 This will start 1 run of the sweep using the `train.py` script on the entity `<entity>` and project `<project-name>`.
+
+## Citation
+
+If you find this repository useful, please consider citing the following paper:
+
+[Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems](https://link.springer.com/chapter/10.1007/978-3-031-74650-5_13)
+
+```bibtex
+@InProceedings{10.1007/978-3-031-74650-5_13,
+author="Bhustali, Prateek
+and Andriotis, Charalampos P.",
+editor="Oliehoek, Frans A.
+and Kok, Manon
+and Verwer, Sicco",
+title="Assessing the Optimality of Decentralized Inspection and Maintenance Policies for Stochastically Degrading Engineering Systems",
+booktitle="Artificial Intelligence and Machine Learning",
+year="2025",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="236--254",
+isbn="978-3-031-74650-5"
+}
+```
